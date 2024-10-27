@@ -1,45 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WEATHER APP</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <style>
-
-
-
-
-
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        background-color: azure;
+        height: 100vh;
+        font-family: cursive;
+      }
+      .container {
+        padding: 30px;
+        margin-top: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(25px);
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        width: fit-content;
+        box-shadow: 5px 5px 8px rgba(80, 77, 77, 0.678);
+      }
+      .container input {
+        padding: 10px;
+        border-radius: 19px;
+        outline: none;
+        border: 1px solid rgba(41, 37, 37, 0.733);
+        background: transparent;
+        backdrop-filter: blur(25px);
+      }
+      .container button {
+        padding: 10px;
+        border-radius: 19px;
+        outline: none;
+        border: 1px solid rgba(41, 37, 37, 0.733);
+        backdrop-filter: blur(25px);
+        background: transparent;
+        transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+        cursor: pointer;
+      }
+      .container button:hover {
+        background-color: rgba(133, 127, 127, 0.733);
+      }
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(172, 143, 143, 0.514);
+        width: 100%;
+      }
+      .temp {
+        display: flex;
+        justify-content: center;
+        color: rgba(59, 58, 58, 0.74);
+        gap: 5px;
+      }
+      .temp h1 {
+        font-size: 17vh;
+      }
+      .temp sub {
+        font-size: 30px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        gap: 15px;
+        font-size: 23px;
+      }
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <header>
+      <h1>WEATHER APPLICATION</h1>
+    </header>
 
+    <div onsubmit="checkWeather(); return false" class="container">
+      <input id="city" type="text" placeholder="ENTER CITY NAME" />
+      <button onclick="checkWeather()">CHECK WEATHER</button>
+    </div>
 
-
-
-
-
-
-
-
-
-
-    
-
+    <main>
+      <section class="temp">
+        <img src="" alt="" />
+        <h1 class="tempInCel">10°C<sub>(party cloudy)</sub></h1>
+      </section>
+      <section class="details">
+        <ul>
+          <li>Location: Birmingham , West Midlands , United Kingdom</li>
+          <li>Fahrenheit: 50 °F</li>
+          <li>Feelslike: 10.3 °C</li>
+          <li>Humidity: 82%</li>
+          <li>Visibility: 10km</li>
+          <li>Wind Speed: 3.6kp/h</li>
+        </ul>
+      </section>
+    </main>
 
     <script>
+      let city = document.querySelector("#city").value;
+      const apiKey = "0b3a4560180a457daa0152104242510";
+      const URL = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
+      let icon = document.querySelector("img");
+      let temp = document.querySelector(".tempInCel");
+      let details = document.getElementsByTagName("li");
 
+      function checkWeather() {
+        //axios method
+        axios
+          .get(URL)
+          .then(function (respone) {
+            console.log(respone.data);
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
 
-
-
-
-
-
-
+        icon.src = temp.innerHTML = ` <sub>(${0})</sub>`;
+        details[0] = 2;
+        details[1] = 2;
+        details[2] = 2;
+        details[3] = 2;
+        details[4] = 2;
+        details[5] = 2;
+      }
     </script>
-    <script src="app.js"></script>
-</body>
+  </body>
 </html>
