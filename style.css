@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: azure;
+  font-family: cursive;
+}
+.container {
+  padding: 30px;
+  margin: 50px;
+  border-radius: 15px;
+  backdrop-filter: blur(25px);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  width: fit-content;
+  box-shadow: 5px 5px 8px rgba(80, 77, 77, 0.678);
+}
+.container input {
+  padding: 10px;
+  border-radius: 19px;
+  outline: none;
+  border: 1px solid rgba(41, 37, 37, 0.733);
+  background: transparent;
+  backdrop-filter: blur(25px);
+}
+.container button {
+  padding: 10px;
+  border-radius: 19px;
+  outline: none;
+  border: 1px solid rgba(41, 37, 37, 0.733);
+  backdrop-filter: blur(25px);
+  background: transparent;
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  cursor: pointer;
+}
+.container button:hover {
+  background-color: rgba(133, 127, 127, 0.733);
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(94, 116, 116, 0.692);
+  width: 100%;
+}
+.temp {
+  display: flex;
+  justify-content: center;
+  color: rgba(59, 58, 58, 0.74);
+  gap: 5px;
+  align-items: center;
+}
+.temp h1 {
+  font-size: 17vh;
+}
+.temp sub {
+  font-size: 30px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 15px;
+  font-size: 23px;
+}
+.temp img {
+  width: 100px;
+}
+@media only screen and (max-width: 600px) {
+  .temp h1 {
+    font-size: 11vh;
+  }
+  .temp sub {
+    font-size: 17px;
+  }
+}
