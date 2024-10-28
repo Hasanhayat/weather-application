@@ -6,6 +6,10 @@ body {
   padding: 0;
   background-color: azure;
   font-family: cursive;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(background.avif);
 }
 .container {
   padding: 30px;
@@ -44,13 +48,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(94, 116, 116, 0.692);
+  background-color: rgba(86, 104, 104, 0.815);
   width: 100%;
 }
 .temp {
   display: flex;
   justify-content: center;
-  color: rgba(59, 58, 58, 0.74);
+  color: rgb(59, 58, 58);
   gap: 5px;
   align-items: center;
 }
