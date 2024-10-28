@@ -37,7 +37,7 @@ function getCity() {
 
       .catch(function (err) {
         console.log(err);
-        // details[0].innerHTML = err.message+"<br> PLEASE CHECK INTERNET CONNECTION";
+        details[0].innerHTML = err.message+"<br> PLEASE CHECK INTERNET CONNECTION";
       });
   }
 
