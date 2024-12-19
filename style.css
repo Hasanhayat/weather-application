@@ -7,9 +7,9 @@ body {
   background-color: azure;
   font-family: cursive;
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
   background-image: url(background.avif);
+  min-height: 100vh;
 }
 .container {
   padding: 30px;
